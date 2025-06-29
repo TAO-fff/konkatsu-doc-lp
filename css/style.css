@@ -1,0 +1,175 @@
+/* ====================
+関数
+==================== */
+:root {
+  /* Font settings */
+  --font-ja: "Noto Sans JP", sans-serif;
+  --font-ja-mincho: "Shippori Mincho", serif;
+}
+
+/* ====================
+共通
+==================== */
+/* section 共通 */
+.lcl-hero,
+.lcl-campaign,
+.lcl-message,
+.lcl-flow,
+.lcl-cta__area,
+.lcl-copy-right {
+  padding: 38px 0;
+  max-width: 768px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.lcl-hero img,
+.lcl-campaign img,
+.lcl-message img,
+.lcl-flow img,
+.lcl-cta__area img,
+.lcl-copy-right img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.lcl-l-container {
+  position: relative;
+}
+
+/* cta btn (hero & 最下部cta) */
+.lcl-hero__btn,
+.lcl-cta__btn {
+  position: absolute;
+  left: 45%;
+  transform: translateX(-50%);
+  width: 80%;
+  max-width: 768px;
+  text-align: center;
+}
+
+.lcl-hero__btn {
+  position: absolute;
+  bottom: 15.5%;
+  left: 45%;
+  transform: translateX(-50%);
+}
+
+.lcl-cta__btn {
+  margin: 0 auto;
+}
+
+.lcl-btn {
+  position: relative;
+  display: inline-block;
+  padding: 30px 40px;
+  background-color: #42a2ad;
+  color: #fff;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  overflow: hidden;
+  width: 100%;
+  max-width: 768px;
+}
+
+.lcl-btn::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  right: 4px;
+  bottom: 4px;
+  border: 2px solid #fff;
+  border-radius: 6px;
+  z-index: 0;
+}
+
+.lcl-btn-line1 {
+  position: relative;
+  z-index: 1;
+  display: block;
+  font-family: var(--font-ja);
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  margin-bottom: 4px;
+}
+
+.lcl-btn-line2 {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+  font-family: var(--font-ja-mincho);
+  font-size: 48px;
+  font-weight: 550;
+  line-height: 1.2;
+}
+
+.lcl-btn-jp {
+  letter-spacing: 0.1em;
+}
+
+.lcl-btn-en {
+  letter-spacing: 0.2em;
+}
+
+/* ====================
+background-img
+==================== */
+.lcl-wrap {
+  width: 100%;
+  max-width: 100vw;
+  text-align: center;
+  background-image: url(../img/pc-back.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+/* ====================
+中央コンテンツ
+==================== */
+.lcl-main {
+  width: 100%;
+  padding: 0 5%;
+  box-sizing: border-box;
+}
+
+.lcl-main > * {
+  max-width: 768px;
+  margin: 0 auto;
+}
+
+/* section hero */
+.lcl-hero {
+  position: relative;
+}
+
+.lcl-hero__inner {
+  position: relative;
+}
+
+/* section flow */
+.lcl-flow__wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  padding: 15px 0;
+}
+
+/* section cta-area */
+.lcl-cta__area {
+  position: relative;
+  padding: 100px 0 220px;
+}
+
+/* copy-right */
+.lcl-copy-right {
+  padding-bottom: 64px;
+}
