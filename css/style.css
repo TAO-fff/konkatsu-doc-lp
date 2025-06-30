@@ -125,14 +125,10 @@
   letter-spacing: 0.2em;
 }
 
-/* hover */
+/* btn-hover */
 .lcl-btn:hover {
   color: #42a2ad;
   background-color: #fff;
-  opacity: .8;
-}
-
-.lcl-btn:hover::before {
   border: 2px solid #42a2ad;
 }
 
@@ -194,10 +190,64 @@ background-img
 /* section cta-area */
 .lcl-cta__area {
   position: relative;
-  padding: 100px 0 220px;
+  padding: 100px 0 350px;
 }
 
 /* copy-right */
 .lcl-copy-right {
   padding-bottom: 64px;
+}
+
+/* ========================
+sp レスポンシブ 
+～1100px pc ／ 1099px～ sp
+======================== */
+@media screen and (max-width: 1099px) and (min-width: 375px) {
+  .lcl-hero,
+  .lcl-campaign,
+  .lcl-message,
+  .lcl-flow,
+  .lcl-cta__area,
+  .lcl-copy-right {
+    padding: 38px 0;
+    max-width: 768px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  /* cta btn (hero & 最下部cta) */
+  .lcl-hero__btn {
+    position: absolute;
+    top: 60%;
+    transform: translateX(-50%);
+  }
+
+  .lcl-btn {
+    padding: 12% 6%;
+    border-radius: 5em;
+    width: 82%;
+  }
+
+  .lcl-btn::before {
+    border-radius: 20em;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+  }
+
+  .lcl-btn-line1 {
+    font-size: 16px;
+  }
+
+  .lcl-btn-line2 {
+    font-size: 32px;
+  }
+
+  /* section cta-area */
+.lcl-cta__area {
+  position: relative;
+  padding: 100px 0 350px;
+}
+
 }
