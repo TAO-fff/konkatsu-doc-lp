@@ -11,7 +11,13 @@
 共通
 ==================== */
 /* section 共通 */
-.lcl-hero,
+.lcl-hero {
+  padding: 38px 0;
+  max-width: 970px;
+  margin: 0 auto;
+  position: relative;
+}
+
 .lcl-campaign,
 .lcl-message,
 .lcl-flow,
@@ -42,9 +48,9 @@
 .lcl-hero__btn,
 .lcl-cta__btn {
   position: absolute;
-  left: 45%;
+  left: 50%;
   transform: translateX(-50%);
-  width: 80%;
+  width: 100%;
   max-width: 768px;
   text-align: center;
 }
@@ -52,7 +58,6 @@
 .lcl-hero__btn {
   position: absolute;
   bottom: 15.5%;
-  left: 45%;
   transform: translateX(-50%);
 }
 
@@ -70,8 +75,9 @@
   font-weight: bold;
   text-decoration: none;
   overflow: hidden;
-  width: 100%;
+  width: 80%;
   max-width: 768px;
+  transition: 0.4s;
 }
 
 .lcl-btn::before {
@@ -84,6 +90,7 @@
   border: 2px solid #fff;
   border-radius: 6px;
   z-index: 0;
+  transition: 0.4s;
 }
 
 .lcl-btn-line1 {
@@ -118,6 +125,17 @@
   letter-spacing: 0.2em;
 }
 
+/* hover */
+.lcl-btn:hover {
+  color: #42a2ad;
+  background-color: #fff;
+  opacity: .8;
+}
+
+.lcl-btn:hover::before {
+  border: 2px solid #42a2ad;
+}
+
 /* ====================
 background-img
 ==================== */
@@ -140,10 +158,10 @@ background-img
   box-sizing: border-box;
 }
 
-.lcl-main > * {
+/* .lcl-main > * {
   max-width: 768px;
   margin: 0 auto;
-}
+} */
 
 /* section hero */
 .lcl-hero {
@@ -152,6 +170,16 @@ background-img
 
 .lcl-hero__inner {
   position: relative;
+}
+
+/* lp-title */
+.lcl-hero__title {
+  width: 100%;
+}
+
+.lcl-hero__title-logo {
+  position: absolute;
+  top: 10%;
 }
 
 /* section flow */
