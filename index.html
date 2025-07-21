@@ -45,16 +45,76 @@
             </div>
           </div>
         </section>
+        <!-- section graph -->
+        <section class="lcl-graph">
+          <div class="lcl-l-container">
+            <div class="lcl-graph__wrap">
+              <!-- graph ttl -->
+              <picture class="lcl-graph-ttl">
+                <source
+                  srcset="./img/sp-graph-ttl.png"
+                  media="(max-width: 1099px)"
+                />
+                <img
+                  src="./img/pc-graph-ttl.png"
+                  alt="5つの軸で婚活のつまずきを分析"
+                />
+              </picture>
+<!-- graph item -->
+<div class="lcl-graph-slider">
+  <div class="lcl-graph-slider__inner">
+    <!-- 1 -->
+    <picture class="lcl-graph-item">
+      <source srcset="./img/sp-graph1.png" media="(max-width: 1099px)" />
+      <img src="./img/pc-graph1.png" alt="" />
+    </picture>
+    <!-- 2 -->
+    <picture class="lcl-graph-item">
+      <source srcset="./img/sp-graph2.png" media="(max-width: 1099px)" />
+      <img src="./img/pc-graph2.png" alt="" />
+    </picture>
+    <!-- 3 -->
+    <picture class="lcl-graph-item">
+      <source srcset="./img/sp-graph3.png" media="(max-width: 1099px)" />
+      <img src="./img/pc-graph3.png" alt="" />
+    </picture>
+    <!-- 4 -->
+    <picture class="lcl-graph-item">
+      <source srcset="./img/sp-graph4.png" media="(max-width: 1099px)" />
+      <img src="./img/pc-graph4.png" alt="" />
+    </picture>
+  </div>
+
+  <!-- 前後ボタン -->
+  <button class="lcl-graph-prev">←</button>
+  <button class="lcl-graph-next">→</button>
+</div>
+
+            </div>
+          </div>
+        </section>
         <!-- section campaign -->
         <section class="lcl-campaign">
           <div class="lcl-l-container">
-            <img src="./img/pc-dammy-campaign.png" alt="" />
+            <picture>
+              <source
+                srcset="./img/sp-campaign.png"
+                media="(max-width: 1099px)"
+              />
+              <img src="./img/pc-campaign.png" alt="15大特典無料プレゼント" />
+            </picture>
           </div>
         </section>
         <!-- section message -->
         <section class="lcl-message">
           <div class="lcl-l-container">
-            <img src="./img/pc-message.png" alt="" />
+            <picture>
+              <source
+                srcset="./img/sp-message.png"
+                media="(max-width: 1099px)"
+              />
+              <img src="./img/pc-message.png" alt="" />
+            </picture>
           </div>
         </section>
         <!-- section flow -->
@@ -62,13 +122,31 @@
           <div class="lcl-l-container">
             <ul class="lcl-flow__wrap">
               <li class="lcl-flow__item">
-                <img src="./img/pc-flow1.png" alt="" />
+                <picture>
+                  <source
+                    srcset="./img/sp-flow1.png"
+                    media="(max-width: 1099px)"
+                  />
+                  <img src="./img/pc-flow1.png" alt="" />
+                </picture>
               </li>
               <li class="lcl-flow__item">
-                <img src="./img/pc-flow2.png" alt="" />
+                <picture>
+                  <source
+                    srcset="./img/sp-flow2.png"
+                    media="(max-width: 1099px)"
+                  />
+                  <img src="./img/pc-flow2.png" alt="" />
+                </picture>
               </li>
               <li class="lcl-flow__item">
-                <img src="./img/pc-flow3.png" alt="" />
+                <picture>
+                  <source
+                    srcset="./img/sp-flow3.png"
+                    media="(max-width: 1099px)"
+                  />
+                  <img src="./img/pc-flow3.png" alt="" />
+                </picture>
               </li>
             </ul>
           </div>
@@ -95,5 +173,58 @@
         </div>
       </main>
     </div>
+
+ <!-- jQuery本体（CDN）読み込みを忘れずに -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+  $(function () {
+    const $slider = $('.lcl-graph-slider__inner');
+    const $items = $('.lcl-graph-item');
+    const itemCount = $items.length;
+    let current = 0;
+    let interval;
+
+    // スライド更新関数
+    function updateSlider() {
+      const translateX = -100 * current;
+      $slider.css('transform', `translateX(${translateX}%)`);
+    }
+
+    // 自動スライド開始
+    function startAutoSlide() {
+      interval = setInterval(function () {
+        current = (current + 1) % itemCount;
+        updateSlider();
+      }, 4000); // 4秒ごとに切り替え
+    }
+
+    // 自動スライド停止
+    function stopAutoSlide() {
+      clearInterval(interval);
+    }
+
+    // 前へ
+    $('.lcl-graph-prev').on('click', function () {
+      stopAutoSlide();
+      current = (current - 1 + itemCount) % itemCount;
+      updateSlider();
+      startAutoSlide();
+    });
+
+    // 次へ
+    $('.lcl-graph-next').on('click', function () {
+      stopAutoSlide();
+      current = (current + 1) % itemCount;
+      updateSlider();
+      startAutoSlide();
+    });
+
+    // 初期化
+    updateSlider();
+    startAutoSlide();
+  });
+</script>
+
   </body>
 </html>

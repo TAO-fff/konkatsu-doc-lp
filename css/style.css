@@ -18,6 +18,7 @@
   position: relative;
 }
 
+.lcl-graph,
 .lcl-campaign,
 .lcl-message,
 .lcl-flow,
@@ -29,6 +30,7 @@
   position: relative;
 }
 
+.lcl-graph,
 .lcl-hero img,
 .lcl-campaign img,
 .lcl-message img,
@@ -154,11 +156,6 @@ background-img
   box-sizing: border-box;
 }
 
-/* .lcl-main > * {
-  max-width: 768px;
-  margin: 0 auto;
-} */
-
 /* section hero */
 .lcl-hero {
   position: relative;
@@ -178,7 +175,8 @@ background-img
   top: 10%;
 }
 
-/* section flow */
+/* section graph  section flow 共通*/
+.lcl-graph__wrap,
 .lcl-flow__wrap {
   display: flex;
   flex-direction: column;
@@ -186,6 +184,43 @@ background-img
   gap: 50px;
   padding: 15px 0;
 }
+
+/* section graph */
+.lcl-graph-slider {
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.lcl-graph-slider__inner {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.lcl-graph-item {
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.lcl-graph-prev,
+.lcl-graph-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  background: #42A2AD;
+  color: #fff;
+  border: none;
+  padding: 30px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.lcl-graph-prev { left: 10px; }
+.lcl-graph-next { right: 10px; }
+
+
 
 /* section cta-area */
 .lcl-cta__area {
@@ -237,11 +272,12 @@ sp レスポンシブ
   }
 
   .lcl-btn-line1 {
-    font-size: 16px;
+    font-size: 20px;
   }
 
   .lcl-btn-line2 {
-    font-size: 32px;
+    font-size: 38px;
+    line-height: 1.4;
   }
 
   /* section cta-area */
