@@ -14,6 +14,16 @@
     <!-- css -->
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/style.css" />
+    <!-- slick css (必須) -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- slick -->
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   </head>
   <body>
     <div class="lcl-wrap">
@@ -60,36 +70,55 @@
                   alt="5つの軸で婚活のつまずきを分析"
                 />
               </picture>
-<!-- graph item -->
-<div class="lcl-graph-slider">
-  <div class="lcl-graph-slider__inner">
-    <!-- 1 -->
-    <picture class="lcl-graph-item">
-      <source srcset="./img/sp-graph1.png" media="(max-width: 1099px)" />
-      <img src="./img/pc-graph1.png" alt="" />
-    </picture>
-    <!-- 2 -->
-    <picture class="lcl-graph-item">
-      <source srcset="./img/sp-graph2.png" media="(max-width: 1099px)" />
-      <img src="./img/pc-graph2.png" alt="" />
-    </picture>
-    <!-- 3 -->
-    <picture class="lcl-graph-item">
-      <source srcset="./img/sp-graph3.png" media="(max-width: 1099px)" />
-      <img src="./img/pc-graph3.png" alt="" />
-    </picture>
-    <!-- 4 -->
-    <picture class="lcl-graph-item">
-      <source srcset="./img/sp-graph4.png" media="(max-width: 1099px)" />
-      <img src="./img/pc-graph4.png" alt="" />
-    </picture>
-  </div>
+              <!-- graph item -->
+              <div class="lcl-graph-slider">
+                <div class="lcl-graph-slider__inner">
+                  <!-- 1 -->
+                  <div class="lcl-graph-item">
+                    <picture>
+                      <source
+                        srcset="./img/sp-graph1.png"
+                        media="(max-width: 1099px)"
+                      />
+                      <img src="./img/pc-graph1.png" alt="" />
+                    </picture>
+                  </div>
+                  <!-- 2 -->
+                  <div class="lcl-graph-item">
+                    <picture
+                      ><source
+                        srcset="./img/sp-graph2.png"
+                        media="(max-width: 1099px)"
+                      />
+                      <img src="./img/pc-graph2.png" alt="" />
+                    </picture>
+                  </div>
+                  <!-- 3 -->
+                  <div class="lcl-graph-item">
+                    <picture
+                      ><source
+                        srcset="./img/sp-graph3.png"
+                        media="(max-width: 1099px)"
+                      />
+                      <img src="./img/pc-graph3.png" alt="" />
+                    </picture>
+                  </div>
+                  <!-- 4 -->
+                  <div class="lcl-graph-item">
+                    <picture
+                      ><source
+                        srcset="./img/sp-graph4.png"
+                        media="(max-width: 1099px)"
+                      />
+                      <img src="./img/pc-graph4.png" alt="" />
+                    </picture>
+                  </div>
+                </div>
 
-  <!-- 前後ボタン -->
-  <button class="lcl-graph-prev">←</button>
-  <button class="lcl-graph-next">→</button>
-</div>
-
+                <!-- 前後ボタン -->
+                <button class="lcl-graph-prev">←</button>
+                <button class="lcl-graph-next">→</button>
+              </div>
             </div>
           </div>
         </section>
@@ -174,57 +203,30 @@
       </main>
     </div>
 
- <!-- jQuery本体（CDN）読み込みを忘れずに -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-<script>
-  $(function () {
-    const $slider = $('.lcl-graph-slider__inner');
-    const $items = $('.lcl-graph-item');
-    const itemCount = $items.length;
-    let current = 0;
-    let interval;
-
-    // スライド更新関数
-    function updateSlider() {
-      const translateX = -100 * current;
-      $slider.css('transform', `translateX(${translateX}%)`);
-    }
-
-    // 自動スライド開始
-    function startAutoSlide() {
-      interval = setInterval(function () {
-        current = (current + 1) % itemCount;
-        updateSlider();
-      }, 4000); // 4秒ごとに切り替え
-    }
-
-    // 自動スライド停止
-    function stopAutoSlide() {
-      clearInterval(interval);
-    }
-
-    // 前へ
-    $('.lcl-graph-prev').on('click', function () {
-      stopAutoSlide();
-      current = (current - 1 + itemCount) % itemCount;
-      updateSlider();
-      startAutoSlide();
-    });
-
-    // 次へ
-    $('.lcl-graph-next').on('click', function () {
-      stopAutoSlide();
-      current = (current + 1) % itemCount;
-      updateSlider();
-      startAutoSlide();
-    });
-
-    // 初期化
-    updateSlider();
-    startAutoSlide();
-  });
-</script>
-
+    <script>
+      $(function () {
+        $(".lcl-graph-slider__inner").slick({
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: true,
+          autoplay: true,
+          autoplaySpeed: 2500,
+          prevArrow: $(".lcl-graph-prev"),
+          nextArrow: $(".lcl-graph-next"),
+          responsive: [
+            {
+              breakpoint: 1100,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: true,
+                autoplay: true,
+                autoplaySpeed: 3000,
+              },
+            },
+          ],
+        });
+      });
+    </script>
   </body>
 </html>

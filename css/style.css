@@ -194,13 +194,17 @@ background-img
 }
 
 .lcl-graph-slider__inner {
-  display: flex;
   transition: transform 0.5s ease;
 }
 
 .lcl-graph-item {
   width: 100%;
   flex-shrink: 0;
+  text-align: center;
+}
+
+.lcl-graph-item picture {
+  display: inline-block;
 }
 
 .lcl-graph-prev,
@@ -209,7 +213,7 @@ background-img
   top: 50%;
   transform: translateY(-50%);
   z-index: 2;
-  background: #42A2AD;
+  background: #42a2ad;
   color: #fff;
   border: none;
   padding: 30px;
@@ -217,10 +221,17 @@ background-img
   border-radius: 50%;
 }
 
-.lcl-graph-prev { left: 10px; }
-.lcl-graph-next { right: 10px; }
+.lcl-graph-prev {
+  left: 8%;
+}
+.lcl-graph-next {
+  right: 8%;
+}
 
-
+.slick-slide img {
+    display: block;
+    width: 100%;
+}
 
 /* section cta-area */
 .lcl-cta__area {
@@ -280,10 +291,17 @@ sp レスポンシブ
     line-height: 1.4;
   }
 
-  /* section cta-area */
-.lcl-cta__area {
-  position: relative;
-  padding: 100px 0 350px;
+  /* slider btn */
+  .lcl-graph-prev {
+  left: 1%;
+}
+.lcl-graph-next {
+  right: 1%;
 }
 
+  /* section cta-area */
+  .lcl-cta__area {
+    position: relative;
+    padding: 100px 0 350px;
+  }
 }
