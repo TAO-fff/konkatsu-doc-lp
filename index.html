@@ -142,7 +142,10 @@
                 srcset="./img/sp-message.png"
                 media="(max-width: 1099px)"
               />
-              <img src="./img/pc-message.png" alt="婚活の再スタートを手厚くサポートします。" />
+              <img
+                src="./img/pc-message.png"
+                alt="婚活の再スタートを手厚くサポートします。"
+              />
             </picture>
           </div>
         </section>
@@ -156,7 +159,10 @@
                     srcset="./img/sp-flow1.png"
                     media="(max-width: 1099px)"
                   />
-                  <img src="./img/pc-flow1.png" alt="STEP1 婚活ドック診断で婚活のつまずきポイントを確認" />
+                  <img
+                    src="./img/pc-flow1.png"
+                    alt="STEP1 婚活ドック診断で婚活のつまずきポイントを確認"
+                  />
                 </picture>
               </li>
               <li class="lcl-flow__item">
@@ -165,7 +171,10 @@
                     srcset="./img/sp-flow2.png"
                     media="(max-width: 1099px)"
                   />
-                  <img src="./img/pc-flow2.png" alt="STEP2 診断後からすぐに使える無料の得点で自分磨きをして魅力アップ" />
+                  <img
+                    src="./img/pc-flow2.png"
+                    alt="STEP2 診断後からすぐに使える無料の得点で自分磨きをして魅力アップ"
+                  />
                 </picture>
               </li>
               <li class="lcl-flow__item">
@@ -174,7 +183,10 @@
                     srcset="./img/sp-flow3.png"
                     media="(max-width: 1099px)"
                   />
-                  <img src="./img/pc-flow3.png" alt="STEP3 理想の出会いを目指して自分に合う方法で婚活再スタート" />
+                  <img
+                    src="./img/pc-flow3.png"
+                    alt="STEP3 理想の出会いを目指して自分に合う方法で婚活再スタート"
+                  />
                 </picture>
               </li>
             </ul>
@@ -203,14 +215,16 @@
       </main>
     </div>
 
+    <!-- slider用 -->
     <script>
-      $(function () {
+      $(window).on("load", function () {
         $(".lcl-graph-slider__inner").slick({
           slidesToShow: 1,
           slidesToScroll: 1,
           arrows: true,
           autoplay: true,
           autoplaySpeed: 2500,
+          infinite: true,
           prevArrow: $(".lcl-graph-prev"),
           nextArrow: $(".lcl-graph-next"),
           responsive: [
@@ -222,6 +236,7 @@
                 arrows: true,
                 autoplay: true,
                 autoplaySpeed: 3000,
+                infinite: true,
               },
             },
           ],
